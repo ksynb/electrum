@@ -5,9 +5,8 @@ pipeline {
   stages {
     stage('Build Docker Images') {
       steps {
-        checkout scm
-        sh 'docker build --no-cache -t electrum-wine-builder-img contrib/build-wine'
-        sh 'docker build --no-cache -t electrum-appimage-builder-img contrib/build-linux/appimage'
+        sh 'docker build -t electrum-wine-builder-img contrib/build-wine'
+        sh 'docker build -t electrum-appimage-builder-img contrib/build-linux/appimage'
       }
     }
 
